@@ -19,8 +19,9 @@ jobs:
       with:
         test-name: required-files
         setup-command: ''
-        command: test -f README.md test -f requirements.txt test -f check_env.py test
-          -f run_smoke_test.py test -f configs/smoke_test.yaml test -d src
+        command: test -f README.md && test -f requirements.txt && test -f check_env.py &&
+          test -f run_smoke_test.py && test -f configs/smoke_test.yaml && test -d
+          src
         timeout: 5
         max-score: 2
     - name: install-dependencies
@@ -29,8 +30,8 @@ jobs:
       with:
         test-name: install-dependencies
         setup-command: ''
-        command: python -m pip install --upgrade pip pip install -r requirements.txt
-          python -c "import torch, sklearn, matplotlib, yaml"
+        command: python -m pip install --upgrade pip && pip install -r requirements.txt
+          && python -c "import torch, sklearn, matplotlib, yaml"
         timeout: 10
         max-score: 2
     - name: environment-check
@@ -39,7 +40,7 @@ jobs:
       with:
         test-name: environment-check
         setup-command: ''
-        command: python check_env.py test -f outputs/logs/env_check.txt
+        command: python check_env.py && test -f outputs/logs/env_check.txt
         timeout: 10
         max-score: 2
     - name: smoke-test-pipeline
@@ -57,8 +58,8 @@ jobs:
       with:
         test-name: required-outputs
         setup-command: ''
-        command: test -f outputs/logs/smoke_test_log.txt test -f outputs/figures/loss_curve.png
-          test -f outputs/checkpoints/smoke_model.pt
+        command: test -f outputs/logs/smoke_test_log.txt && test -f outputs/figures/loss_curve.png
+          && test -f outputs/checkpoints/smoke_model.pt
         timeout: 10
         max-score: 2
     - name: Autograding Reporter
