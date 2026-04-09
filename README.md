@@ -66,11 +66,24 @@ Sinh viên nộp lại toàn bộ project sau khi đã chạy xong, bao gồm:
 - ảnh chụp màn hình terminal hoặc output thành công
 
 ## Sinh viên cần cập nhật README này
-- Họ tên:
-- MSSV:
-- Lớp:
-- Hệ điều hành:
-- Python version:
-- Torch version:
-- Thiết bị chạy: CPU / GPU
-- Ghi chú lỗi gặp phải khi setup (nếu có):
+- Họ tên: Nguyễn Trung Thành
+- MSSV: 1771040022
+- Lớp: Khoa Học Máy Tính K1701
+- Hệ điều hành: Windows 11 (Windows-11-10.0.26200-SP0)
+- Python version: 3.12.9
+- Torch version: 2.6.0+cpu
+- Thiết bị chạy: CPU
+- Ghi chú lỗi gặp phải khi setup (nếu có): Gặp lỗi Windows Long Path khi cài `jupyter` trong môi trường ảo đặt ngay trong thư mục project (`.\csc4005_env`). Sau đó chạy pipeline thành công bằng Python hệ thống đã có đủ thư viện.
+
+## Kết quả chạy thực tế
+- `python check_env.py`: **SUCCESS**
+- `python run_smoke_test.py`: **SUCCESS**
+
+Artifacts đã sinh:
+- `outputs/logs/env_check.txt`
+- `outputs/logs/smoke_test_log.txt`
+- `outputs/figures/loss_curve.png`
+- `outputs/checkpoints/smoke_model.pt`
+
+## Ảnh terminal output thành công
+![Terminal output thành công](reports/terminal_success.png)
